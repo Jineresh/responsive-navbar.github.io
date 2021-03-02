@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Menu Navbar Animation</title>
+</head>
+<body>
+    <header>
+        <div class="head_nav">
+            <a href="#" class="logo">Brand</a>
+            <div class="menu-btn">
+                <div class="menu-btn__burger"></div>
+            </div>
+        </div>
+        <nav  class="nav_links">
+            <ul>
+                <li class="items"><a href="#">About me</a></li>
+                <li class="items"><a href="#">Projects</a></li>
+                <li class="items"><a href="#">Contacts</a></li>
+                
+            </ul>
+        </nav>        
+    </header>
+
+    <script>
+        const show = document.querySelector('.menu-btn');
+        
+        const menu = document.querySelector('.nav_links');
+        showMenu = false;
+        show.addEventListener('click', () => {
+            if(!showMenu) {
+                menu.classList.add('show-menu');
+                show.classList.add('open');
+                showMenu = true;
+            } else {
+                menu.classList.remove('show-menu');
+                show.classList.remove('open');
+                showMenu = false;
+            }
+        })
+    </script>
+</body>
+</html>

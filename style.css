@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;    
+}
+
+body {
+    background-color: #2e2e2e;
+} 
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+.logo {
+    font-size: 20px;
+    letter-spacing: 1.5px;
+}
+header {   
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background: #00bd7e;
+}
+.head_nav {
+    padding: 0 2em;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_links {
+    position: absolute;
+    top: 60px;
+    transform: translateX(-100%);
+    width: 60%;
+    background: rgba(233, 233, 233, 0.808);
+    padding: 1em 2em 2em 2em;
+    transition: all .3s ease-in;
+}
+
+.items {
+    padding: 10px 0;
+    list-style-type: none;
+}
+
+.nav_links a {
+    transition: all .2s ease-in-out;
+    color: #473755;
+}
+.nav_links a:hover {
+    color: #8563a0;
+}
+
+.show-menu {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+.menu-btn {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;    
+}
+
+.menu-btn__burger {
+    transition: all .2s ease-in;
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    background: whitesmoke;
+}
+.menu-btn__burger::before,
+.menu-btn__burger::after
+ {
+    content: '';
+    width: 30px;
+    height: 4px;
+    border-radius: 4px;
+    background: whitesmoke;
+    position: absolute;
+    transition: all .2s ease-in-out;
+}
+.menu-btn__burger::before {
+    transform: translateY(-10px);
+}
+.menu-btn__burger::after {
+    transform: translateY(10px);
+} 
+/* Menu Animation */
+.menu-btn.open .menu-btn__burger {
+    background: transparent;
+}
+.menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg);
+}
+.menu-btn.open .menu-btn__burger::after { 
+    transform: rotate(-45deg);
+}
+
+
+
+@media only screen and (min-width: 600px) {
+    .menu-btn {
+        display: none;
+    }
+    header {        
+    flex-direction: row ;
+    align-items: center;
+    padding: 0 5%;
+    }
+    .head_nav { 
+        position: unset;
+        padding: 0;
+    }
+    .nav_links {
+        position: initial;        
+        transform: unset;
+        left: 20px;
+        width: fit-content;   
+        padding: 0;
+        background-color: transparent;
+    }
+
+    .items {
+        display: inline;    
+        padding: 0 10px;   
+    }
+    .items a {
+        color: white
+    }
+
+    .items a:hover {
+        color: #2e2e2e;
+    }
+}
